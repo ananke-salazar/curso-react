@@ -8,15 +8,27 @@ class App extends Component {
       nombre: "Juan José Lizarazo",
       rol: "Estudiante",
       descripcion: "Software: Ananké",
-      listaDeCursosAprobados: [".NET", "SQL Server", "Express JS"]
+      listaDeCursosAprobados: [
+        {
+          nombre: ".NET",
+          nota: "4.4"
+        },
+        {
+          nombre: "Oracle DB",
+          nota: "2.1"
+        },
+        {
+          nombre: "Express JS",
+          nota: "5.0"
+        }]
     };
 
     let miOtraPersona = {
       nombre: "Narda Amador",
       rol: "Estudiante",
       descripcion: "Antropología: UNAL",
-      listaDeCursosAprobados: ["Arqueología", "Fund. Antropología", "Antropología Biológica",
-        "Latín I", "Cultura de Imagen"]
+      listaDeCursosAprobados: [{nombre: "Arqueología", nota: "5.0"}, 
+      {nombre: "Fund. Antropología", nota:"3.3"}]
     };
 
 
