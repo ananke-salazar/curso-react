@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import InfoDePersona from './InfoDePersona';
+import InfoDePersona from './componentes/InfoDePersona/InfoDePersona';
 
 class App extends Component {
   render() {
@@ -33,10 +33,10 @@ class App extends Component {
 
 
     return (
-      <div>
+      <React.Fragment>
         <InfoDePersona persona={miPersona}></InfoDePersona>
         <InfoDePersona persona={miOtraPersona}></InfoDePersona>
-      </div>
+      </React.Fragment>
     );
   }
 }
