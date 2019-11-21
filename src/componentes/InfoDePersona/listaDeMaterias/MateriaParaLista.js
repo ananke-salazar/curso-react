@@ -35,14 +35,9 @@ class MateriaParaLista extends Component {
             return (<span style={{ color: "black" }}>{this.props.materia.nota}
             </span>);
         }
-
-
-
     }
 
     obtenerFlechaSegunNotaDefinitiva = () => {
-
-
         if (this.props.materia.nota >= 3.0) {
             return (<small class="text-success pl-2" >
                 <i class="fa fa-angle-up ">

@@ -11,17 +11,17 @@ class App extends Component {
       listaDeCursosTomados: [
         {
           nombre: ".NET",
-          nota: "4.4",
+          nota: 4.4,
           ciclo:"Ciclo IV"
         },
         {
           nombre: "Oracle DB",
-          nota: "2.1",
+          nota: 2.1,
           ciclo:"Ciclo III"
         },
         {
           nombre: "Express JS",
-          nota: "5.0",
+          nota: 5.0,
           ciclo:"Ciclo V"
         }]
     };
@@ -30,8 +30,8 @@ class App extends Component {
       nombre: "Narda Amador",
       rol: "Estudiante",
       descripcion: "Antropología: UNAL",
-      listaDeCursosTomados: [{nombre: "Arqueología", nota: "5.0",ciclo:"Ciclo VIII"}, 
-      {nombre: "Fund. Antropología", nota:"3.3", ciclo:"Ciclo II"}]
+      listaDeCursosTomados: [{nombre: "Arqueología", nota: 5.0,ciclo:"Ciclo VIII"}, 
+      {nombre: "Fund. Antropología", nota:3.3, ciclo:"Ciclo II"}]
     };
 
 

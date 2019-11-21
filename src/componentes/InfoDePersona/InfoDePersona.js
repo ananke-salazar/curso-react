@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ListaDeMaterias from './listaDeMaterias/ListaDeMaterias';
+import MateriaParaLista from './listaDeMaterias/MateriaParaLista';
 
 class InfoDePersona extends Component {
     render() {
@@ -27,10 +28,32 @@ class InfoDePersona extends Component {
                         <ListaDeMaterias listaDeCursos={this.props.persona.listaDeCursosTomados}></ListaDeMaterias>
                     </div>
                     <div class="text-center d-block card-footer">
-                        <button class="btn btn-info">View Details</button>
+                        {this.obtenerInformacionDePromedio()}
                     </div>
                 </div>
             </div>
+        );
+    }
+
+    calcularPromedioDelEstudiante = () => {
+        let cursos = this.props.persona.listaDeCursosTomados;
+        let suma = 0;
+
+        for (let i = 0; i < cursos.length; i++) {
+            suma += cursos[i].nota;
+        }
+
+        return suma / cursos.length;
+    }
+
+    obtenerInformacionDePromedio = () => {
+        return (
+            <ul class="rm-list-borders list-group list-group-flush">
+                <MateriaParaLista materia={{
+                    nombre: "Promedio",
+                    nota: this.calcularPromedioDelEstudiante()
+                }}></MateriaParaLista>
+            </ul>
         );
     }
 }
