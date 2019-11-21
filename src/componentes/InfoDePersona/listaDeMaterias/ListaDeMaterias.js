@@ -12,11 +12,24 @@ class ListaDeMaterias extends Component {
     }
 
     render() {
-        return (
 
+        let listaDeMateriasEnHTML = [];
+        for (let i = 0; i < this.props.listaDeCursos.length; i++) {
+            listaDeMateriasEnHTML.push(
+                <MateriaParaLista materia=
+                    {{
+                        nota: this.props.listaDeCursos[i].nota,
+                        nombre: this.props.listaDeCursos[i].nombre,
+                        ciclo: this.props.listaDeCursos[i].ciclo
+                    }}
+                ></MateriaParaLista>
+            );
+        }
+
+
+        return (
             <ul class="rm-list-borders list-group list-group-flush">
-                <MateriaParaLista materia={{ nota: 3.1, nombre: "React JS", ciclo: "Ciclo V" }}></MateriaParaLista>
-                <MateriaParaLista materia={{ nota: 1.5, nombre: ".NET", ciclo: "Ciclo IV" }}></MateriaParaLista>
+                {listaDeMateriasEnHTML}
             </ul>
         );
     }

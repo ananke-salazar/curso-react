@@ -2,28 +2,7 @@ import React, { Component } from 'react';
 import ListaDeMaterias from './listaDeMaterias/ListaDeMaterias';
 
 class InfoDePersona extends Component {
-
-    constructor() {
-        super();
-
-        this.state = {
-            labelDeNota: ""
-        }
-    }
-
     render() {
-
-        let miArrayDeCursosEnHTML = [];
-        for (let i = 0; i < this.props.persona.listaDeCursosAprobados.length; i++) {
-            miArrayDeCursosEnHTML
-                .push(
-                    <option value={this.props.persona.listaDeCursosAprobados[i].nombre}
-                        key={"OpcionDeSeleccion" + i}>
-                        {this.props.persona.listaDeCursosAprobados[i].nombre}
-                    </option>);
-        }
-
-
         return (
             <div class="col-md-12 col-lg-6 col-xl-4">
                 <div class="card-shadow-primary card-border mb-3 card">
@@ -45,7 +24,7 @@ class InfoDePersona extends Component {
                     </div>
                     <div class="p-3">
                         <h6 class="text-muted text-uppercase font-size-md opacity-5 font-weight-normal">Lista de Materias</h6>
-                        <ListaDeMaterias></ListaDeMaterias>
+                        <ListaDeMaterias listaDeCursos={this.props.persona.listaDeCursosTomados}></ListaDeMaterias>
                     </div>
                     <div class="text-center d-block card-footer">
                         <button class="btn btn-info">View Details</button>
@@ -53,22 +32,6 @@ class InfoDePersona extends Component {
                 </div>
             </div>
         );
-    }
-
-    setearElLabelDeLaNota = (e) => {
-        let nombreDeCursoTarget = e.target.value;
-        let notaTarget;
-
-        for (let i = 0; i < this.props.persona.listaDeCursosAprobados.length; i++) {
-            if (this.props.persona.listaDeCursosAprobados[i].nombre === nombreDeCursoTarget) {
-                notaTarget = this.props.persona.listaDeCursosAprobados[i].nota;
-                break;
-            }
-        }
-
-        this.setState({
-            labelDeNota: "Nota: " + notaTarget
-        });
     }
 }
 

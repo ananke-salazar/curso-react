@@ -10,7 +10,7 @@ class MateriaParaLista extends Component {
 
                         <div class="widget-content-left">
                             <div class="widget-heading">{this.props.materia.nombre}</div>
-                            <div class="widget-subheading"><b>{this.props.materia.ciclo}</b></div>
+                            <div class="widget-subheading">{this.props.materia.ciclo}</div>
                         </div>
                         <div class="widget-content-right">
                             <div class="font-size-xlg text-muted">
@@ -23,7 +23,6 @@ class MateriaParaLista extends Component {
             </li>
         );
     }
-
 
     obtenerTextoConColorSegunNota = () => {
 
@@ -58,8 +57,6 @@ class MateriaParaLista extends Component {
         }
 
     }
-
-
 }
 
 export default MateriaParaLista;
