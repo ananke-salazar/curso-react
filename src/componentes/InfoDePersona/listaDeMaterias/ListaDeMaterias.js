@@ -42,12 +42,14 @@ class ListaDeMaterias extends Component {
                 <div className="row">
                     <div className="col-md-6">
                         <p style={{ cursor: "pointer", textAlign: "center" }}
-                        onClick={this.eventoDeClicParaOrdenarCursorPorNombre}>Nombre</p>
+                            onClick={this.eventoDeClicParaOrdenarCursorPorNombre}
+                            className="text-muted text-uppercase font-size-md opacity-5 font-weight-normal">Nombre</p>
                     </div>
 
                     <div className="col-md-6">
                         <p style={{ cursor: "pointer", textAlign: "center" }}
-                            onClick={this.eventoDeClicParaOrdenarCursorPorNota}>Nota</p>
+                            onClick={this.eventoDeClicParaOrdenarCursorPorNota}
+                            className="text-muted text-uppercase font-size-md opacity-5 font-weight-normal">Nota</p>
                     </div>
                 </div>
                 <ul className="rm-list-borders list-group list-group-flush">

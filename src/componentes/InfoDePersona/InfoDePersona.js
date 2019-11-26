@@ -14,17 +14,17 @@ class InfoDePersona extends Component {
                                     <div className="avatar-icon"><img src="assets/images/avatars/6.jpg" alt="Avatar 5" /></div>
                                 </div>
                                 <div>
-                                    <h5 className="menu-header-title">Isabelle Day</h5>
-                                    <h6 className="menu-header-subtitle">Security Officer</h6>
+                                    <h5 className="menu-header-title">{this.props.persona.nombre}</h5>
+                                    <h6 className="menu-header-subtitle">{this.props.persona.rol}</h6>
                                 </div>
-                                <div className="menu-header-btn-pane pt-1">
+                                {/* <div className="menu-header-btn-pane pt-1">
                                     <button className="btn-icon btn btn-warning btn-sm">View Complete Profile</button>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
                     <div className="p-3">
-                        <h6 className="text-muted text-uppercase font-size-md opacity-5 font-weight-normal">Lista de Materias</h6>
+                        {/* <h6 className="text-muted text-uppercase font-size-md opacity-5 font-weight-normal">Lista de Materias</h6> */}
                         <ListaDeMaterias listaDeCursos={this.props.persona.listaDeCursosTomados}></ListaDeMaterias>
                     </div>
                     <div className="text-center d-block card-footer">

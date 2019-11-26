@@ -12,17 +12,17 @@ class App extends Component {
         {
           nombre: ".NET",
           nota: 4.4,
-          ciclo:"Ciclo IV"
+          ciclo: "Ciclo IV"
         },
         {
           nombre: "Oracle DB",
           nota: 2.1,
-          ciclo:"Ciclo III"
+          ciclo: "Ciclo III"
         },
         {
           nombre: "Express JS",
           nota: 5.0,
-          ciclo:"Ciclo V"
+          ciclo: "Ciclo V"
         }]
     };
 
@@ -30,8 +30,10 @@ class App extends Component {
       nombre: "Narda Amador",
       rol: "Estudiante",
       descripcion: "Antropología: UNAL",
-      listaDeCursosTomados: [{nombre: "Arqueología", nota: 5.0,ciclo:"Ciclo VIII"}, 
-      {nombre: "Fund. Antropología", nota:3.3, ciclo:"Ciclo II"}]
+      listaDeCursosTomados: [
+        { nombre: "Fund. Antropología", nota: 1.3, ciclo: "Ciclo II" },
+        { nombre: "Arqueología", nota: 5.0, ciclo: "Ciclo VIII" },
+        { nombre: "Latín IV", nota: 2.1, ciclo: "Ciclo VI" }]
     };
 
 
@@ -39,7 +41,7 @@ class App extends Component {
       <React.Fragment>
         <InfoDePersona persona={miPersona}></InfoDePersona>
         <InfoDePersona persona={miOtraPersona}></InfoDePersona>
-      </React.Fragment>
+      </React.Fragment >
     );
   }
 }
