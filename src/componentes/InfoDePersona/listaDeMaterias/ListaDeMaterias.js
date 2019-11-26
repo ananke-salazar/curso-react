@@ -7,20 +7,30 @@ class ListaDeMaterias extends Component {
         super();
 
         this.state = {
-            labelDeNota: ""
+            listaDeCursos: [],
+            criterioDeOrdenamiento: "nota"
         }
     }
 
     render() {
 
         let listaDeMateriasEnHTML = [];
-        for (let i = 0; i < this.props.listaDeCursos.length; i++) {
+        let miListaDeMateriasOrdenadas;
+
+        if (this.state.criterioDeOrdenamiento === "nombre") {
+            miListaDeMateriasOrdenadas = this.obtenerListaDeMateriasOrdenadasPorNombre();
+        }
+        else {
+            miListaDeMateriasOrdenadas = this.obtenerListaDeMateriasOrdenadasPorNota();
+        }
+
+        for (let i = 0; i < miListaDeMateriasOrdenadas.length; i++) {
             listaDeMateriasEnHTML.push(
                 <MateriaParaLista materia=
                     {{
-                        nota: this.props.listaDeCursos[i].nota,
-                        nombre: this.props.listaDeCursos[i].nombre,
-                        ciclo: this.props.listaDeCursos[i].ciclo
+                        nota: miListaDeMateriasOrdenadas[i].nota,
+                        nombre: miListaDeMateriasOrdenadas[i].nombre,
+                        ciclo: miListaDeMateriasOrdenadas[i].ciclo
                     }}
                 ></MateriaParaLista>
             );
@@ -28,12 +38,47 @@ class ListaDeMaterias extends Component {
 
 
         return (
-            <ul class="rm-list-borders list-group list-group-flush">
-                {listaDeMateriasEnHTML}
-            </ul>
+            <React.Fragment>
+                <div className="row">
+                    <div className="col-md-6">
+                        <p style={{ cursor: "pointer", textAlign: "center" }}
+                        onClick={this.eventoDeClicParaOrdenarCursorPorNombre}>Nombre</p>
+                    </div>
+
+                    <div className="col-md-6">
+                        <p style={{ cursor: "pointer", textAlign: "center" }}
+                            onClick={this.eventoDeClicParaOrdenarCursorPorNota}>Nota</p>
+                    </div>
+                </div>
+                <ul className="rm-list-borders list-group list-group-flush">
+                    {listaDeMateriasEnHTML}
+                </ul>
+            </React.Fragment>
         );
     }
 
+    componentDidMount() {
+        this.setState({
+            listaDeCursos: this.props.listaDeCursos
+        });
+    }
+
+
+    obtenerListaDeMateriasOrdenadasPorNombre = () => {
+        return this.state.listaDeCursos.sort((a, b) => (a.nombre > b.nombre) ? 1 : ((b.nombre > a.nombre) ? -1 : 0));
+    }
+
+    obtenerListaDeMateriasOrdenadasPorNota = () => {
+        return this.state.listaDeCursos.sort((a, b) => (a.nota < b.nota) ? 1 : ((b.nota < a.nota) ? -1 : 0));
+    }
+
+    eventoDeClicParaOrdenarCursorPorNombre = () => {
+        this.setState({ criterioDeOrdenamiento: "nombre" });
+    }
+
+    eventoDeClicParaOrdenarCursorPorNota = () => {
+        this.setState({ criterioDeOrdenamiento: "nota" });
+    }
 
 }
 
