@@ -91,9 +91,9 @@ class App extends Component {
           rol: "Estudiante",
           descripcion: "Ingeniería Mecánica: USTA",
           listaDeCursosTomados: [
-            { nombre: "Fund. Antropología", nota: 1.3, ciclo: "Ciclo II" },
-            { nombre: "Arqueología", nota: 5.0, ciclo: "Ciclo VIII" },
-            { nombre: "Latín IV", nota: 2.1, ciclo: "Ciclo VI" }]
+            { nombre: "Cálculo III", nota: 4.9, ciclo: "Ciclo II" },
+            { nombre: "Teoría de Conjuntos", nota: 5.0, ciclo: "Ciclo VIII" },
+            { nombre: "Cultura física", nota: 2.9, ciclo: "Ciclo VI" }]
         }
       ]
     });
