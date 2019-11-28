@@ -15,7 +15,7 @@ class InfoDePersona extends Component {
                                 </div>
                                 <div>
                                     <h5 className="menu-header-title">{this.props.persona.nombre}</h5>
-                                    <h6 className="menu-header-subtitle">{this.props.persona.rol}</h6>
+                                    <h6 className="menu-header-subtitle">{this.props.persona.rol+" de "+this.props.persona.descripcion}</h6>
                                 </div>
                                 {/* <div className="menu-header-btn-pane pt-1">
                                     <button className="btn-icon btn btn-warning btn-sm">View Complete Profile</button>
